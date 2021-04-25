@@ -10,8 +10,24 @@ session_start();
       src="https://kit.fontawesome.com/64d58efce2.js"
       crossorigin="anonymous"
     ></script>
+
     <link rel="stylesheet" href="style.css" />
+
     <title>Sign in & Sign up Form</title>
+    
+    <script type="text/javascript">
+      /* <![CDATA[ */
+       function externalLinks() {
+        links = document.getElementsByTagName("a");
+        for (i=0; i<links.length; i++) {
+          link = links[i];
+          if (link.getAttribute("href") && link.getAttribute("rel") == "external")
+          link.target = "_blank";
+        }
+       }
+       window.onload = externalLinks;
+      /* ]]> */ 
+    </script>
   </head>
   <body>
     <div class="container">
@@ -30,16 +46,16 @@ session_start();
             <input type="submit" value="Login" class="btn solid" />
             <p class="social-text">Or Sign in with social platforms</p>
             <div class="social-media">
-                <a ondblclick="location.href='https://www.facebook.com/'" class="social-icon">
+                <a ondblclick="location.href='https://www.facebook.com/'" class="social-icon" rel="external">
                   <i class="fab fa-facebook-f"></i>
                 </a>
-                <a ondblclick="location.href='https://www.twitter.com/'" class="social-icon">
+                <a ondblclick="location.href='https://www.twitter.com/'" class="social-icon" rel="external">
                   <i class="fab fa-twitter"></i>
                 </a>
-                <a ondblclick="location.href='https://www.google.com/'" class="social-icon">
+                <a ondblclick="location.href='https://www.google.com/'" class="social-icon" rel="external">
                   <i class="fab fa-google"></i>
                 </a>
-                <a ondblclick="location.href='https://www.linkedin.com/'" class="social-icon">
+                <a ondblclick="location.href='https://www.linkedin.com/'" class="social-icon" rel="external">
                   <i class="fab fa-linkedin-in"></i>
                 </a>
               </div>
@@ -61,16 +77,16 @@ session_start();
             <input type="submit" class="btn" value="Sign up" />
             <p class="social-text">Or Sign up with social platforms</p>
             <div class="social-media">
-              <a ondblclick="location.href='https://www.facebook.com/'" class="social-icon">
+              <a ondblclick="location.href='https://www.facebook.com/'" class="social-icon" rel="external">
                 <i class="fab fa-facebook-f"></i>
               </a>
-              <a ondblclick="location.href='https://www.twitter.com/'" class="social-icon">
+              <a ondblclick="location.href='https://www.twitter.com/'" class="social-icon" rel="external">
                 <i class="fab fa-twitter"></i>
               </a>
-              <a ondblclick="location.href='https://www.google.com/'" class="social-icon">
+              <a ondblclick="location.href='https://www.google.com/'" class="social-icon" rel="external">
                 <i class="fab fa-google"></i>
               </a>
-              <a ondblclick="location.href='https://www.linkedin.com/'" class="social-icon">
+              <a ondblclick="location.href='https://www.linkedin.com/'" class="social-icon" rel="external">
                 <i class="fab fa-linkedin-in"></i>
               </a>
             </div>
