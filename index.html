@@ -14,20 +14,8 @@ session_start();
     <link rel="stylesheet" href="style.css" />
 
     <title>Sign in & Sign up Form</title>
-    
-    <script type="text/javascript">
-      /* <![CDATA[ */
-       function externalLinks() {
-        links = document.getElementsByTagName("a");
-        for (i=0; i<links.length; i++) {
-          link = links[i];
-          if (link.getAttribute("href") && link.getAttribute("rel") == "external")
-          link.target = "_blank";
-        }
-       }
-       window.onload = externalLinks;
-      /* ]]> */ 
-    </script>
+
+
   </head>
   <body>
     <div class="container">
@@ -46,20 +34,20 @@ session_start();
             <input type="submit" value="Login" class="btn solid" />
             <p class="social-text">Or Sign in with social platforms</p>
             <div class="social-media">
-                <a ondblclick="location.href='https://www.facebook.com/'" class="social-icon" rel="external">
+              <a ondblclick="location.href='https://www.facebook.com/'" class="social-icon">
                   <i class="fab fa-facebook-f"></i>
                 </a>
-                <a ondblclick="location.href='https://www.twitter.com/'" class="social-icon" rel="external">
+                <a ondblclick="location.href='https://www.twitter.com/'" class="social-icon">
                   <i class="fab fa-twitter"></i>
                 </a>
-                <a ondblclick="location.href='https://www.google.com/'" class="social-icon" rel="external">
+                <a ondblclick="location.href='https://www.google.com/'" class="social-icon">
                   <i class="fab fa-google"></i>
                 </a>
-                <a ondblclick="location.href='https://www.linkedin.com/'" class="social-icon" rel="external">
+                <a ondblclick="location.href='https://www.linkedin.com/'" class="social-icon">
                   <i class="fab fa-linkedin-in"></i>
                 </a>
               </div>
-          </form>
+            </form>
           <form action="#" class="sign-up-form">
             <h2 class="title">Sign up</h2>
             <div class="input-field">
@@ -77,16 +65,16 @@ session_start();
             <input type="submit" class="btn" value="Sign up" />
             <p class="social-text">Or Sign up with social platforms</p>
             <div class="social-media">
-              <a ondblclick="location.href='https://www.facebook.com/'" class="social-icon" rel="external">
+              <a ondblclick="location.href='https://www.facebook.com/'" class="social-icon">
                 <i class="fab fa-facebook-f"></i>
               </a>
-              <a ondblclick="location.href='https://www.twitter.com/'" class="social-icon" rel="external">
+              <a ondblclick="location.href='https://www.twitter.com/'" class="social-icon">
                 <i class="fab fa-twitter"></i>
-              </a>
-              <a ondblclick="location.href='https://www.google.com/'" class="social-icon" rel="external">
+              </a>              
+              <a ondblclick="location.href='https://www.google.com/'" class="social-icon">
                 <i class="fab fa-google"></i>
               </a>
-              <a ondblclick="location.href='https://www.linkedin.com/'" class="social-icon" rel="external">
+              <a ondblclick="location.href='https://www.linkedin.com/'" class="social-icon">
                 <i class="fab fa-linkedin-in"></i>
               </a>
             </div>
@@ -123,6 +111,9 @@ session_start();
         </div>
       </div>
     </div>
+
+
+    
 
     <script src="app.js"></script>
   </body>
