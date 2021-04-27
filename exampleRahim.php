@@ -1,18 +1,22 @@
-<?php 
+<?php
 //класс состоит из 2 частей: свойств и методов
-class Animal{
+class Animal
+{
     //эти свойства, теже самые переменные
     public $name;
     public $age;
 
     //это метод, теже самые функций
-    public function sheWawa($age) {
+    public function sheWawa($age)
+    {
         echo 'What is that animal?' . $age;
     }
-    public function setName($name){
+    public function setName($name)
+    {
         $this->name = $name;
     }
-    public function setAge($age){
+    public function setAge($age)
+    {
         $this->age = $age;
     }
 }
