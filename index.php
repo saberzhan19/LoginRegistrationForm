@@ -20,7 +20,7 @@ session_start();
   <div class="container">
     <div class="forms-container">
       <div class="signin-signup">
-        <form action="#" class="sign-in-form">
+        <form action="auth.php" class="sign-in-form" method="post">
           <h2 class="title">Sign in</h2>
           <div class="input-field">
             <i class="fas fa-user"></i>
@@ -47,7 +47,7 @@ session_start();
             </a>
           </div>
         </form>
-        <form action="#" class="sign-up-form">
+        <form action="check.php" class="sign-up-form" method="post">
           <h2 class="title">Sign up</h2>
           <div class="input-field">
             <i class="fas fa-user"></i>
