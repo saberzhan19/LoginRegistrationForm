@@ -16,21 +16,35 @@ else if(mb_strlen($email) < 3){
 	exit();
 } // Проверяем длину имени 
 
-$password = password_hash($password, PASSWORD_DEFAULT); // Создаем хэш из пароля
 
-$mysql = new mysqli('localhost','root','root', 'logreg3');
+$pdo = new PDO("mysql:host=localhost;dbname=logreg3", "root", "root");
 
-$result1 = $mysql->query("SELECT * FROM `logreg3` WHERE `red` = '$username'");
-$user1 = $result1->fetch_assoc(); // Конвертируем в массив
-if(!empty($user1)){
-	echo "Данный логин уже используется!";
-	exit();
+// $result1 = $mysql->query("SELECT * FROM `logreg3` WHERE `red` = '$username'");
+// $user1 = $result1->fetch_assoc(); // Конвертируем в массив
+
+$sql = "SELECT * FROM red WHERE email=:email";
+$statement = $pdo->prepare($sql);
+$statement->execute(["email" => $email]);
+$user3 = $statement->fetch(PDO::FETCH_ASSOC);
+
+if(!empty($user3)){
+    echo "Данный логин уже используется!";
+} else{
+    echo "Зарегистрируйтесь пожайлуста!";
 }
 
-$mysql->query("INSERT INTO `logreg3` (`username`, `password`, `email`)
+$sql->query("INSERT INTO `logreg3` (`username`, `password`, `email`)
 	VALUES('$username', '$password', '$email')");
-$mysql->close();
 
-header('Location: /');
-exit();
+$statement = $pdo->prepare($sql);
+$statement->execute([
+
+    "username" => $username,
+    "email" => $email,
+    "password" => password_hash($password, PASSWORD_DEFAULT) // Создаем хэш из пароля
+])
+// $mysql->close();
+
+// header('Location: /');
+// exit();
  ?>
