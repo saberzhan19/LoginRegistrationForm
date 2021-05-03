@@ -7,30 +7,39 @@ class Animal
     public $name;
     public $age;
 
+    //конструктор класса
+    public function __construct($name, $age){
+        $this->name= $name;
+        $this->age= $age;
+    }
+
     //это метод, теже самые функций
-    public function sheWawa($age)
+    public function sayHello()
     {
-        echo 'What is that animal?' . $age;
+        echo 'Hi, she is<br>' . $this->name .'and she is '. $this->sayAge();
     }
     public function setName($name)
     {
-        $this->name = $name;
+        $this->name = $name;//Zhanel
     }
     public function setAge($age)
     {
         $this->age = $age;
     }
+    public function sayAge(){
+        return $this->age;
+    }
 }
 
-//Внизу всегда отдельно сверху классы, снизу обьекты
-$myAnimal = new Animal;
-$myAnimal2 = new Animal;
+//Внизу всегда отдельно, сверху классы, снизу обьекты
+$myAnimal = new Animal('Sapura','28<br>');
+$myAnimal2 = new Animal('Dina',27);
 
-$myAnimal->setName('Dina');
-$myAnimal->setAge(25);
-
-$myAnimal2->setName('Sapura');
-$myAnimal2->setAge(29);
+// $myAnimal->setName('Dina<br>');
+// $myAnimal->setAge('25<br>');
 
 echo $myAnimal->name;
+echo $myAnimal->age;
 echo $myAnimal2->name;
+echo $myAnimal2->age;
+
