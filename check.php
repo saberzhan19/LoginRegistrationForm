@@ -1,4 +1,4 @@
-<?php 
+<!-- <?php 
 
 //Откуда я все этот код взял https://itnan.ru/post.php?c=1&p=497962
 
@@ -47,4 +47,4 @@ $statement->execute([
 
 // header('Location: /');
 // exit();
- ?>
+ ?> -->
