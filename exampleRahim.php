@@ -73,8 +73,8 @@ class Student{
 class Univercity{
     public $students;
 
-    public function addStudent(Student $student){//Здесь меняем Student
-        echo $student->age;
+    public function addStudent(animal $student){//Здесь меняем Student
+        echo $student->name;
     }
 }
 
@@ -83,4 +83,4 @@ $univer = new Univercity;
 $animal = new Animal('Panda', 15);
 $student = new Student();
 
-$univer->addStudent($student);//Здесь меняем $student и от зависимости class Student или Univercity
+$univer->addStudent($animal);//Здесь меняем $student и от зависимости class Student или Univercity
