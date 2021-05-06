@@ -41,7 +41,7 @@ $statement->execute([
 
     "username" => $username,
     "email" => $email,
-    "password" => password_hash($password, PASSWORD_DEFAULT) // Создаем хэш из пароля
+    "password" => password_hash($password, PASSWORD_DEFAULT) // Создаем хэш из пароля, надежнее md5
 ])
 // $mysql->close();
 

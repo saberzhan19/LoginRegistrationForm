@@ -1,7 +1,36 @@
-<?php
-session_start();
-?>
+
 <!DOCTYPE html>
+<?php
+$servername = "localhost";
+$username = "root";
+$password = "root";
+$dbname = "logreg3";
+
+try{
+    $conn = mysqli_connect($servername, $username, $password, $dbname);
+    echo ("Successfull in Connection");
+}catch (MySQLi_Sql_Exception $ex){
+    echo ("Error in connection");
+}
+if(isset($_POST['signup'])){
+  $username = $_POST['username'];
+  $email = $_POST['email'];
+  $password = password_hash($_POST['password'], PASSWORD_DEFAULT);
+  $register_query = "INSERT INTO `red`(`id`, `username`, `email`, `password`) VALUES ('$username', '$email','$password','$password')";
+  try{
+    $register_result = mysqli_query($conn, $register_query);
+    if($register_result){
+      if(mysqli_affected_rows($conn)>0){
+        echo("Registration successfull");
+      }else{
+        echo("Error in registration");
+      }
+    }
+  }catch(Exception $ex){
+    echo("error".$ex->getMessage());
+  }
+}
+?>
 <html lang="en">
 
 <head>
@@ -20,7 +49,7 @@ session_start();
   <div class="container">
     <div class="forms-container">
       <div class="signin-signup">
-        <form action="auth.php" class="sign-in-form" method="post">
+        <form action="page.html" class="sign-in-form" method="post">
           <h2 class="title">Sign in</h2>
           <div class="input-field">
             <i class="fas fa-user"></i>
@@ -61,7 +90,7 @@ session_start();
             <i class="fas fa-lock"></i>
             <input type="password" name="password" class="form-control" id="password" placeholder="Password" />
           </div>
-          <input type="submit" class="btn" value="Sign up" />
+          <input type="submit" class="btn" name="signup" value="Sign up" />
           <p class="social-text">Or Sign up with social platforms</p>
           <div class="social-media">
             <a ondblclick="location.href='https://www.facebook.com/'" class="social-icon">
