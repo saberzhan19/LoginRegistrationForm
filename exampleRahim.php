@@ -84,3 +84,12 @@ $animal = new Animal('Panda', 15);
 $student = new Student();
 
 $univer->addStudent($animal);//Здесь меняем $student и от зависимости class Student или Univercity
+
+
+//isset проверяет существует переменные на этой странице
+/* if ( isset($_GET['Osapura'])){
+   
+    echo $_GET['Osapura'];
+} else{
+    echo 'не установлено';
+} */

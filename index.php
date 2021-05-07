@@ -6,6 +6,7 @@ $username = "root";
 $password = "root";
 $dbname = "logreg3";
 
+
 try{
     $conn = mysqli_connect($servername, $username, $password, $dbname);
     echo ("Successfull in Connection");
