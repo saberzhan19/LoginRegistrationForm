@@ -1,3 +1,18 @@
+<?php 
+  session_start(); 
+
+  //address from where https://codewithawa.com/posts/complete-user-registration-system-using-php-and-mysql-database
+
+  if (!isset($_SESSION['username'])) {
+  	$_SESSION['msg'] = "You must log in first";
+  	header('location: login.php');
+  }
+  if (isset($_GET['logout'])) {
+  	session_destroy();
+  	unset($_SESSION['username']);
+  	header("location: login.php");
+  }
+?>
 <!DOCTYPE html>
 <html lang="en">
   <head>
@@ -12,6 +27,9 @@
   </head>
   <body>
     <div class="container">
+
+    <?php if (isset($_SESSION['success'])) : ?>
+
       <div class="forms-container">
         <div class="signin-signup">
           <form action="#" class="sign-in-form">
@@ -108,3 +126,4 @@
     <script src="app.js"></script>
   </body>
 </html>
+
